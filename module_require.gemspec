@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ModuleRequire::VERSION
   spec.authors       = ["Nick Markwell"]
   spec.email         = ["nick@duckinator.net"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = "A library that adds the ability to require files in isolation from everything else."
+  spec.summary       = spec.description
   spec.homepage      = ""
   spec.license       = "MIT"
 
