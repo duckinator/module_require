@@ -1,3 +1,5 @@
+require "module_require/version"
+
 class Module
   def module_require(file)
     # TODO: Handle the case where it has already been required.
