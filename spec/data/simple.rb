@@ -1,6 +1,3 @@
-$times_loaded ||= 0
-$times_loaded += 1
-
 class Greeter
   def greet(person='world')
     "Hello, #{person}!"
