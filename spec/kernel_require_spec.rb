@@ -25,8 +25,4 @@ describe 'require' do
       end
     end
   end
-
-  it 'only loads files the first time' do
-    $times_loaded.must_equal 1
-  end
 end
