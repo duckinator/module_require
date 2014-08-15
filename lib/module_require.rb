@@ -2,26 +2,7 @@ require "module_require/version"
 
 class Module
   def module_require(file)
-    # TODO: Handle the case where it has already been required.
-
-    prev = Object.constants
-
-    if Object.const_defined?(:Gem)
-      Gem.require file
-    else
-      Kernel.require file
-    end
-
-    curr = Object.constants
-
-    new = curr - prev
-
-    new.each do |name|
-      self.const_set(name, Object.const_get(name))
-      Object.class_eval { remove_const name }
-
-      $LOADED_FEATURES.reject! { |filename| filename =~ %r[/#{name}(/|\.[a-zA-Z0-9]+$)] }
-    end
+    class_eval open(file).read
 
     self
   end
