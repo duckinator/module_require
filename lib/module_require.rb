@@ -19,10 +19,12 @@ module Kernel
             name = name.to_s
             name[0] = name[0].capitalize
             name.gsub!(/_([a-z])/) { $1.upcase }
-            self.const_get(name)
-          else
-            super(name, *args)
+            if self.const_defined?(name)
+              return self.const_get(name)
+            end
           end
+
+          super(name, *args)
         end
 
         module_require(file)

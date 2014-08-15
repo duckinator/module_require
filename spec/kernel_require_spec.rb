@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+# TODO: Tests for method_missing.
+
 SIMPLE_RB = File.join(File.dirname(__FILE__), 'data', 'simple.rb')
 
 describe 'require' do
